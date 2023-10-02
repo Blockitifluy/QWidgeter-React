@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;1,400&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+//Widget Colours
+$imperial-red: #f94144ff;
+$orange-crayola: #f3722cff;
+$carrot-orange: #f8961eff;
+$coral: #f9844aff;
+$saffron: #f9c74fff;
+$pistachio: #90be6dff;
+$zomp: #43aa8bff;
+$dark-cyan: #4d908eff;
+$paynes-gray: #577590ff;
+$cerulean: #277da1ff;
+
+//Master Colours
+$orange-wheel: #fc8c41ff;
+$selective-yellow: #feb409ff;
+$bice-blue: #106b9fff;
+$maize: #faeb61ff;
+$space-cadet: #2f3148ff;
+$yellow-green: #84c43bff;
+$bleu-de-france: #0b8fedff;
+$verdigris: #17b8bbff;
+$french-rose: #ec4a8dff;
+
+$label-blue: #1d92ff;
+
+//Other Varibles
+$grid-size: 35px;
+$dot-color: #00000056;
+$body-color: #f0f0f0;
+
+$light-background: #eee;
+$dark-background: #333;
+
+$light-text: #ccc;
+
+body {
+  font-family: 'Poppins', sans-serif;
+
+  background-color: $body-color;
+  background-image: radial-gradient($dot-color 0.8px, $body-color 0.8px);
+  background-size: 16px 16px;
+}
+
+@keyframes fade-button-blink {
+  from, to {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes run-button-blink {
+  from, to {
+    background-color: $bleu-de-france;
+  }
+
+  50% {
+    background-color: darken($bleu-de-france, 10%)
+  }
+}
+
+#main-title {
+  position: absolute;
+
+  left: 50vw;
+  top: 25vh;
+
+  transform: translate(-50%, -50%);
+  color: $light-text;
+}
+
+.widget {
+  position: absolute;
+  background-color: white;
+
+  width: 10em;
+
+  border-radius: 1rem;
+
+  padding-bottom: 15px;
+
+  h2 {
+    border-radius: 1rem 1rem 0px 0px;
+
+    padding: 1px 0px;
+
+    text-align: center;
+    font-size: 1.25em;
+
+    color: white;
+
+    background-color: $coral;
+    margin: 0px 0px 5px 0px;
+  }
+
+  .widget-action {
+    display: inline-block;
+
+    margin: 5px 0px 5px 5px;
+
+    &:hover{
+      animation: fade-button-blink 1s infinite;
+    }
+
+  }
+
+  .widget-run {
+    display: block;
+
+    width: calc(100% -  2.5em);
+
+    color: white;
+    padding: 5px 0px;
+    font-weight: bold;
+    border-radius: 1rem;
+
+    margin: auto;
+
+    background-color: $bleu-de-france;
+    border: none;
+
+    &:hover {
+      animation: run-button-blink 1s infinite;
+    }
+  }
+}
